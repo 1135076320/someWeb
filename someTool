@@ -1,0 +1,70 @@
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.concurrent.locks.Condition;
+import java.util.concurrent.locks.ReentrantLock;
+
+public class DoneInOrderQueue<T> {
+    private Queue<T> queue;
+    private ReentrantLock lock;
+    private Condition condition1;
+    private Condition condition2;
+    private Scheduling scheduling;
+    private Executor<T> excutor;
+    public DoneInOrderQueue(Executor<T> excutor) {
+        queue = new LinkedList();
+        lock = new ReentrantLock();
+        condition1 = lock.newCondition();
+        condition2 = lock.newCondition();
+        this.excutor = excutor;
+        scheduling = new Scheduling();
+        scheduling.start();
+    }
+
+    public void Next(){
+        try {
+            lock.lock();
+            condition2.signalAll();
+        } finally {
+            lock.unlock();
+        }
+    }
+
+    public void add(T t){
+        if (t == null) throw new NullPointerException("Null is not Allowed!");
+        try {
+            lock.lock();
+            queue.offer(t);
+            condition1.signalAll();
+        } finally {
+            lock.unlock();
+        }
+
+    }
+
+    public interface Executor<T>{
+        void excute(T t);
+    }
+
+    class Scheduling extends Thread{
+        @Override
+        public void run() {
+            super.run();
+            while (true){
+                try {
+                    lock.lock();
+                    if (queue.isEmpty()){
+                        condition1.await();
+                    }
+                    T task = queue.poll();
+                    excutor.excute(task);
+                    condition2.await();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                } finally {
+                    lock.unlock();
+                }
+            }
+        }
+    }
+
+}
