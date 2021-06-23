@@ -1,0 +1,21 @@
+stegsolve  逐帧查看，并在必要时分离
+GIFSplitter  GIF动画分离小工具，能将GIF动画转换为bmp文件
+010Editor   一款非常强大的文本/十六进制编辑器,除了文本/十六进制编辑外,还包括文件解析、计算器、文件比较等功能,但它真正的强大之处还在于文件的解析功能。.检查十六进制格式下的图片，常用文本搜索
+binwalk   常用于分析隐写文件,文件的分析工具，旨在协助研究人员对文件进行分析，提取及逆向工程
+foremost   在数字取证中和CTF中常用来恢复、分离文件。它默认支持19种类型文件(jpg, gif, png, bmp, avi, exe, mpg, mp4, wav, riff, wmv, mov, pdf, ole, doc, zip, rar, html, cpp 等文件)的扫描识别恢复，还可以通过(通过配置它的配置文件foremost.conf)增加新的支持类型。
+pngcheck   通过检查CRC和解压缩图像数据来验证PNG、JNG和MNG文件的完整性。
+tweakpng   用于检查和修改PNG图像文件,检测crc校验值
+APCHPR   压缩包暴力破解工具,破解方式有字典攻击、掩码破解（比暴力破解多知道一些比特位）和明文攻击
+crark55   Rar压缩包密码破解工具
+Audacity   音频处理工具
+mp3stego   主要用于mp3隐写
+ResourceHacker   专业的资源编辑工具,经常使用它编译、查看、反编译以及再编译 32 位和 64 位 Windows 可执行文件的资源
+silentEye    可以将文字或者文件隐藏到图片的加密工具
+zsteg   可以检测PNG和BMP图片里的隐写数据
+wbstego   可以把您的数据隐藏在 BMP、TXT、HTML、PDF文件中。
+bftools  在Windows的cmd下，对加密过的图片文件进行解密
+stegdetect    主要用于分析JPEG文件，可以检测到通过JSteg、JPHide、OutGuess、Invisible Secrets、F5、appendX和Camouflage等这些隐写工具隐藏的信息
+outguess   加密解密隐藏文件
+F5-steganography   解密f5算法隐写
+steghide    在文件中隐藏数据或检查图片中隐藏的信息
+Wireshark     Wireshark是一个非常棒的开源多平台网络协议分析器。它允许您检查来自实时网络或磁盘上的捕获文件的数据。您可以以交互方式浏览捕获数据，深入了解所需的数据包详细信息。
